@@ -1,6 +1,9 @@
 
 MHRadialProgressView is an iOS drop-in class radial progress view.
 
+[![](https://raw.githubusercontent.com/mehfuzh/MHRadialProgressView/master/ScreenShots/placeit.png)](https://raw.githubusercontent.com/mehfuzh/MHRadialProgressView/master/ScreenShots/placeit.png)
+_(by placeit)_
+
 ##Requirements
 MHRadialProgressView works on iOS 5 and above and is compatible with ARC projects. It depends on the following Apple frameworks:
 
