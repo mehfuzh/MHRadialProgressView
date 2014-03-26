@@ -9,6 +9,7 @@
 #import "MHRadialProgressView.h"
 
 CGFloat static const kMHStorkeWidthRatio = 0.07;
+CGFloat static const kAnimationDuration = 0.5;
 
 @interface MHRadialProgressSegment : NSObject
 
@@ -177,7 +178,7 @@ CGFloat static const kMHStorkeWidthRatio = 0.07;
     [self.layer addSublayer:progressLayer];
     
     CABasicAnimation *animateStrokeEnd = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-    animateStrokeEnd.duration  = 0.5 * ([fragment.value doubleValue] / [self.maxValue doubleValue]);
+    animateStrokeEnd.duration  = kAnimationDuration * ([fragment.value doubleValue] / [self.maxValue doubleValue]);
     animateStrokeEnd.fromValue = [NSNumber numberWithFloat:0.0f];
     animateStrokeEnd.toValue   = [NSNumber numberWithFloat:1.0f];
     [progressLayer addAnimation:animateStrokeEnd forKey:nil];
@@ -227,7 +228,7 @@ CGFloat static const kMHStorkeWidthRatio = 0.07;
 {
     self = [super init];
     if (self) {
-        self.color = [UIColor colorWithRed:112/255. green:202/255. blue:229/255. alpha:1.0];
+        self.color = [UIColor colorWithRed:112/255. green:198/255. blue:149/255. alpha:1.0];
     }
     return self;
 }
