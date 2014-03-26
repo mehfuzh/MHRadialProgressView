@@ -21,9 +21,9 @@ You can directly add the `MHRadialProgressView.h` and `MHRadialProgressView.m` s
 
 
 ### Cocoapods
-[CocoaPods](http://cocoapods.org) is the recommended way to add MHTextField to your project.
+[CocoaPods](http://cocoapods.org) is the recommended way to add MHRadialProgressView to your project.
 
-1. Add a pod entry for MHRadialProgressView to your Podfile `pod 'MHTextField', '~> 0.0.1'`
+1. Add a pod entry for MHRadialProgressView to your Podfile `pod 'MHRadialProgressView', '~> 0.0.1'`
 2. Install the pod(s) by running `pod install`.
 3. Include MHTextField with `#import "MHRadialProgressView.h"`
 
