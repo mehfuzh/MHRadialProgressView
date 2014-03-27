@@ -14,7 +14,6 @@ CGFloat static const kAnimationDuration = 0.5;
 @interface MHRadialProgressSegment : NSObject
 
 @property (nonatomic, strong) NSNumber *value;
-@property (nonatomic, strong) UIColor *color;
 @property int index;
 @property BOOL completed;
 
@@ -50,6 +49,8 @@ CGFloat static const kAnimationDuration = 0.5;
         _style = MHProgressStylePercentage;
         
         [self setBackgroundColor:[UIColor clearColor]];
+        
+        [self setProgressColor:[UIColor colorWithRed:112/255. green:198/255. blue:149/255. alpha:1.0]];
         
         self.segments = [[NSMutableArray alloc] initWithCapacity:[points count]];
         
@@ -168,7 +169,7 @@ CGFloat static const kAnimationDuration = 0.5;
     
     [progressLayer setPath: bezierPath.CGPath];
     
-    [progressLayer setStrokeColor:fragment.color.CGColor];
+    [progressLayer setStrokeColor:self.progressColor.CGColor];
     [progressLayer setFillColor:[UIColor clearColor].CGColor];
     [progressLayer setLineWidth:kMHStorkeWidthRatio * self.bounds.size.width];
     
@@ -223,15 +224,6 @@ CGFloat static const kAnimationDuration = 0.5;
 @end
 
 @implementation MHRadialProgressSegment
-
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        self.color = [UIColor colorWithRed:112/255. green:198/255. blue:149/255. alpha:1.0];
-    }
-    return self;
-}
 
 @end
 

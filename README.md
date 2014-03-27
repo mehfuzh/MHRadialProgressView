@@ -1,6 +1,6 @@
 MHRadialProgressView is an iOS drop-in class radial animated progress view.
 
-[![](https://raw.githubusercontent.com/mehfuzh/MHRadialProgressView/master/ScreenShots/placeit.png)](https://raw.githubusercontent.com/mehfuzh/MHRadialProgressView/master/ScreenShots/placeit.png)
+[![](https://raw.githubusercontent.com/mehfuzh/MHRadialProgressView/master/ScreenShots/demo.png)](https://raw.githubusercontent.com/mehfuzh/MHRadialProgressView/master/ScreenShots/demo.png)
 _(by placeit)_
 
 ##Requirements

@@ -15,6 +15,8 @@ typedef NS_ENUM(NSInteger, MHProgressStyle){
 
 @interface MHRadialProgressView : UIView
 
+@property (nonatomic, strong) UIColor *progressColor;
+
 - (id)initWithFrame:(CGRect)frame points:(NSArray*)points;
 
 // Default is MHProgressStylePercentage. Sets the progress style
