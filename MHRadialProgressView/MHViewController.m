@@ -54,7 +54,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [self.progressView moveNext];
+   [self.progressView moveNext];
 }
 
 - (void)tapped:(UITapGestureRecognizer*)gesture

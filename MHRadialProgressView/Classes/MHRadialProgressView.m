@@ -28,6 +28,7 @@ CGFloat static const kAnimationDuration = 0.5;
 @property NSInteger progressIndex;
 @property CGFloat startAngle;
 @property double curentValue;
+@property double initialValue;
 
 @property (nonatomic, strong) UILabel *textLabel;
 
@@ -36,6 +37,8 @@ CGFloat static const kAnimationDuration = 0.5;
 @property MHProgressStyle style;
 @property NSNumber *fontHeight;
 @property UIFont *font;
+
+@property NSTimer* timer;
 
 @end
 
@@ -88,6 +91,11 @@ CGFloat static const kAnimationDuration = 0.5;
         _fontHeight = [NSNumber numberWithFloat:(_textLabel.font.pointSize / 2) - 1];
         
         [self addSubview:_textLabel];
+        
+        _initialValue = 0.0;
+        
+        [self setNumber:@(0.0)];
+        
     }
     
     return self;
@@ -117,9 +125,8 @@ CGFloat static const kAnimationDuration = 0.5;
     
     [attributedString addAttributes:@{NSFontAttributeName:_font, NSBaselineOffsetAttributeName:_fontHeight} range:alphaRange];
     
-    
     [_textLabel setAttributedText:attributedString];
-}
+ }
 
 
 - (void)setProgressStyle:(MHProgressStyle)style
@@ -186,7 +193,7 @@ CGFloat static const kAnimationDuration = 0.5;
     
     _startAngle = endAngle;
     
-    [self setNumber:[NSNumber numberWithInt:_curentValue]];
+    self.timer= [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(increaseValue) userInfo:nil repeats:YES];
     
     self.progressIndex++;
     
@@ -220,6 +227,15 @@ CGFloat static const kAnimationDuration = 0.5;
     [bezierPath stroke];
 }
 
+- (void)increaseValue{
+    
+   if (_initialValue >= _curentValue){
+        [self.timer invalidate];
+        return;
+    }
+    
+    [self setNumber:[NSNumber numberWithInt:++_initialValue]];
+}
 
 @end
 
