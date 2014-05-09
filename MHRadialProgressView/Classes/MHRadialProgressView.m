@@ -8,8 +8,8 @@
 
 #import "MHRadialProgressView.h"
 
-CGFloat static const kMHStorkeWidthRatio = 0.07;
-CGFloat static const kAnimationDuration = 0.5;
+CGFloat kAnimationDuration = 0.5;
+CGFloat kMHStorkeWidthRatio = 0.07;
 
 @interface MHRadialProgressSegment : NSObject
 
@@ -106,6 +106,7 @@ CGFloat static const kAnimationDuration = 0.5;
     _format = format;
 }
 
+
 - (void)setNumber:(NSNumber*)number
 {
     if (_style == MHProgressStylePercentage){
@@ -115,7 +116,14 @@ CGFloat static const kAnimationDuration = 0.5;
         _format = @"%@%%";
     }
     
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:_format, number]];
+    NSAttributedString *attributedString = [self attributedTextWithFormat:_format value:number];
+    
+    [_textLabel setAttributedText:attributedString];
+}
+
+- (NSAttributedString*)attributedTextWithFormat:(NSString*)format value:(NSNumber*)value
+{
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:_format, value]];
     
     [attributedString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:0.37 * MIN(self.bounds.size.width, self.bounds.size.height)] range:NSMakeRange(0, attributedString.length)];
     
@@ -125,8 +133,8 @@ CGFloat static const kAnimationDuration = 0.5;
     
     [attributedString addAttributes:@{NSFontAttributeName:_font, NSBaselineOffsetAttributeName:_fontHeight} range:alphaRange];
     
-    [_textLabel setAttributedText:attributedString];
- }
+    return attributedString;
+}
 
 
 - (void)setProgressStyle:(MHProgressStyle)style

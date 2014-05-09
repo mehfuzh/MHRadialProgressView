@@ -15,9 +15,15 @@ typedef NS_ENUM(NSInteger, MHProgressStyle){
 
 @interface MHRadialProgressView : UIView
 
+extern CGFloat kMHStorkeWidthRatio;
+extern CGFloat kAnimationDuration;
+
 @property (nonatomic, strong) UIColor *progressColor;
 
 - (id)initWithFrame:(CGRect)frame points:(NSArray*)points;
+
+// Creates the attributed text on based on format. Override it in order to customize the label.
+- (NSAttributedString*)attributedTextWithFormat:(NSString*)format value:(NSNumber*)value;
 
 // Default is MHProgressStylePercentage. Sets the progress style
 - (void)setProgressStyle:(MHProgressStyle)style;
