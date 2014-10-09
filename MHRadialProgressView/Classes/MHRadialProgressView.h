@@ -10,7 +10,8 @@
 
 typedef NS_ENUM(NSInteger, MHProgressStyle){
     MHProgressStylePercentage,
-    MHProgressStyleValue
+    MHProgressStyleValue,
+    MHProgressStyleNone
 } ;
 
 @interface MHRadialProgressView : UIView
