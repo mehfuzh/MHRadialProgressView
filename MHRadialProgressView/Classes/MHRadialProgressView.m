@@ -140,6 +140,20 @@ CGFloat kMHStorkeWidthRatio = 0.07;
 - (void)setProgressStyle:(MHProgressStyle)style
 {
     _style = style;
+    
+    switch (_style) {
+        case MHProgressStyleNone:
+            [self.textLabel removeFromSuperview];
+            break;
+            
+        case MHProgressStyleValue:
+            _format = @"%@";
+            break;
+            
+        default:
+            _format = @"%@%%";
+            break;
+    }
 }
 
 - (void)moveNext
