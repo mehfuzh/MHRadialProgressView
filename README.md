@@ -20,7 +20,7 @@ You can directly add the `MHRadialProgressView.h` and `MHRadialProgressView.m` s
 3. Include MHRadialProgressView with `#import "MHRadialProgressView.h"`.
 
 
-### Cocoapods
+### CocoaPods
 [CocoaPods](http://cocoapods.org) is the recommended way to add MHRadialProgressView to your project.
 
 1. Add a pod entry for MHRadialProgressView to your Podfile `pod 'MHRadialProgressView', '~> 0.2'`
